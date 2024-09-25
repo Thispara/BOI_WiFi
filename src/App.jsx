@@ -27,6 +27,7 @@ function App() {
   return (
     <div className="app">
       <h1>WiFi Password</h1>
+      <h1>@BOIGuest</h1>
       <input 
         type="text" className="search-input" 
         value={searchTerm} 
