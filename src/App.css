@@ -1,0 +1,108 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%; /* Ensure the body takes the full height */
+  margin: 0; /* Remove default margin */
+}
+
+body {
+  display: flex; /* Use Flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: #f0f0f0; /* Light background for the whole page */
+}
+
+.app {
+  max-width: 400px; /* Reduced width for a more compact layout */
+  width: 100%; /* Ensure it scales on smaller screens */
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center text inside the app */
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 20px; /* Reduced font size */
+}
+
+.search-input {
+  width: 100%; /* Full width for input */
+  height: 35px; /* Smaller height for input */
+  padding: 5px; /* Reduced padding */
+  font-size: 16px; /* Smaller font size */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  color: #333;
+}
+
+.search-input:focus {
+  border-color: #000000; /* Highlight border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.search-button {
+  width: 75px; /* Full width for button */
+  height: 35px; /* Smaller height for button */
+  margin-top: 20px; /* Space between input and button */
+  margin-bottom: -10px;
+  padding: 0px; /* Reduced padding */
+  font-size: 16px; /* Smaller font size */
+  background-color: #5d5d5d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+.search-button:hover {
+  background-color: #2c2c2c; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0; /* Space between results and search area */
+}
+
+.search-result {
+  padding: 10px; /* Smaller padding */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Space between results */
+  transition: background-color 0.3s;
+}
+
+.search-result:hover {
+  background-color: #f1f1f1; /* Light background color on hover */
+}
+
+.search-result:last-child {
+  margin-bottom: 0; /* Remove margin on the last result */
+}
+
+.search-result p {
+  margin: 0; /* Remove default margin */
+  color: #555; /* Softer color for text */
+}
