@@ -6,13 +6,16 @@ import userData from './data.jsx';
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [noResults, setNoResults] = useState(false);
 
   const handleSearch = () => {
     if (!searchTerm.trim()) {
       return;
     }
-    const results = userData.filter(user => user.Name.toLowerCase().includes(searchTerm.toLowerCase()));
+    const lowerCaseSearchTerm = searchTerm.toLowerCase();
+    const results = userData.filter(user => user.Name.toLowerCase() === lowerCaseSearchTerm);
     setSearchResults(results);
+    setNoResults(results.length === 0);
   };
 
   const handleKeyDown = (event) => {
@@ -33,12 +36,16 @@ function App() {
         required />
       <button onClick={handleSearch} type='submit' className="search-button">Search</button>
       <ul className="search-results">
-        {searchResults.map(user => (
-          <li key={user.id_BOIGuest} className="search-result">
-            <p>ID: {user.id_BOIGuest}</p>
-            <p>Password: {user.Password}</p>
-          </li>
-        ))}
+        {searchResults.length > 0 ? (
+          searchResults.map(user => (
+            <li key={user.id_BOIGuest} className="search-result">
+              <p>ID: {user.id_BOIGuest}</p>
+              <p>Password: {user.Password}</p>
+            </li>
+          ))
+        ) : (
+          noResults && <li className="search-result">User not found</li>
+        )}
       </ul>
     </div>
   );
