@@ -101,10 +101,6 @@ h1 {
   background-color: #f1f1f1; /* Light background color on hover */
 }
 
-.search-result:last-child {
-  margin-bottom: 0; /* Remove margin on the last result */
-}
-
 .search-result p {
   margin: 0; /* Remove default margin */
   color: #555; /* Softer color for text */
