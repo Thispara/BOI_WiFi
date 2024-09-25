@@ -17,7 +17,7 @@ function App() {
     <div className="app">
       <h1>WiFi Password</h1>
       <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} placeholder="Enter your name" className="search-input" />
-      <button onClick={handleSearch} className="search-button">Search</button>
+      <button onClick={handleSearch} type='submit' className="search-button">Search</button>
       <ul className="search-results">
         {searchResults.map(user => (
           <li key={user.id_BOIGuest} className="search-result">
