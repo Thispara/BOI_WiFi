@@ -8,15 +8,29 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = () => {
+    if (!searchTerm.trim()) {
+      return;
+    }
     const results = userData.filter(user => user.Name.toLowerCase().includes(searchTerm.toLowerCase()));
     setSearchResults(results);
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
 
   return (
     <div className="app">
       <h1>WiFi Password</h1>
-      <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} placeholder="Enter your name" className="search-input" />
+      <input 
+        type="text" className="search-input" 
+        value={searchTerm} 
+        onChange={e => setSearchTerm(e.target.value)} 
+        onKeyDown={handleKeyDown}
+        placeholder="Enter your name" 
+        required />
       <button onClick={handleSearch} type='submit' className="search-button">Search</button>
       <ul className="search-results">
         {searchResults.map(user => (
